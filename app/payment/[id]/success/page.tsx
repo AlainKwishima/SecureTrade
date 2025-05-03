@@ -41,4 +41,42 @@ export default function PaymentSuccessPage({ params }: { params: { id: string } 
           </CardDescription>
         </CardHeader>
         
-        <CardContent className="space-y-6">\
+        <CardContent className="space-y-6">
+          <div className="text-center">
+            <p className="text-sm text-gray-500">Order ID</p>
+            <p className="text-lg font-medium">{orderDetails.orderId}</p>
+          </div>
+          <div className="text-center">
+            <p className="text-sm text-gray-500">Date</p>
+            <p className="text-lg font-medium">{orderDetails.date}</p>
+          </div>
+          <div className="text-center">
+            <p className="text-sm text-gray-500">Product</p>
+            <p className="text-lg font-medium">{orderDetails.product}</p>
+          </div>
+          <div className="text-center">
+            <p className="text-sm text-gray-500">Quantity</p>
+            <p className="text-lg font-medium">{orderDetails.quantity}</p>
+          </div>
+          <div className="text-center">
+            <p className="text-sm text-gray-500">Total</p>
+            <p className="text-lg font-medium">${orderDetails.total.toFixed(2)}</p>
+          </div>
+          <div className="text-center">
+            <p className="text-sm text-gray-500">Estimated Delivery</p>
+            <p className="text-lg font-medium">{orderDetails.estimatedDelivery}</p>
+          </div>
+        </CardContent>
+      </Card>
+      
+      <div className="mt-6 text-center">
+        <button
+          onClick={() => router.push("/")}
+          className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+        >
+          Back to Home
+        </button>
+      </div>
+    </div>
+  );
+}
